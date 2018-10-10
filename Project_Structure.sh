@@ -26,30 +26,32 @@ cd "$Projectname"
 mkdir build dist docs lib setup src test web
 echo "Folders created:- 'build' 'dist' 'docs' 'lib' 'setup' 'src' 'test' 'web'"
 cd src
-TEMP_PATH=src;
+TEMP_PATH=src
 #Folders based on web application
 mkdir conf java
 echo "Folders created inside src folder:- 'conf' 'java'"
 cd ..
 cd web
+TEMP_PATH=web
 #Copying the files from Main code the created directory
-cp $OLD_PATH/files/test.html $NEW_PATH/"$Projectname"/web
-cp $OLD_PATH/files/test.jsp $NEW_PATH/"$Projectname"/web
+cp $OLD_PATH/$TEMP_PATH/test.html $NEW_PATH/"$Projectname"/$TEMP_PATH
+cp $OLD_PATH/$TEMP_PATH/test.jsp $NEW_PATH/"$Projectname"/$TEMP_PATH
 echo "files copied are test.html and test.jsp"
 #Folders based on web application
 mkdir WEB-INF
 cd WEB-INF
+TEMP_PATH=web/WEB-INF
 #Folders based on web application
 mkdir jspf lib tlds tags
 echo "folders created are 'jspf' 'lib' 'tlds' 'tags'"
-cp /home/ec2-user/files/web.xml /home/ec2-user/"$Projectname"/WEB-INF
+cp $OLD_PATH/$TEMP_PATH/web.xml $NEW_PATH/"$Projectname"/$TEMP_PATH
 cd ..
 cd ..
 #Copying the files from Main code the created directory
-cp $OLD_PATH/files/prop.properties $NEW_PATH/"$Projectname"
-cp $OLD_PATH/files/build.xml $NEW_PATH/"$Projectname"
-cp $OLD_PATH/files/README.txt $NEW_PATH/"$Projectname"
-cp $OLD_PATH/files/LICENSE.txt $NEW_PATH/"$Projectname"
+cp $OLD_PATH/prop.properties $NEW_PATH/"$Projectname"
+cp $OLD_PATH/build.xml $NEW_PATH/"$Projectname"
+cp $OLD_PATH//README.txt $NEW_PATH/"$Projectname"
+cp $OLD_PATH//LICENSE.txt $NEW_PATH/"$Projectname"
 echo "Files are copied in the folder"
 echo "Project Structure is created with all  the needed files"
 
