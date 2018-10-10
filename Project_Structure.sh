@@ -21,7 +21,7 @@ echo "files copied are test.html and test.jsp"
 #Folders based on web application
 mkdir WEB-INF
 cd WEB-INF
-
+#Folders based on web application
 mkdir jspf lib tlds tags
 echo "folders created are 'jspf' 'lib' 'tlds' 'tags'"
 cp /home/ec2-user/files/web.xml /home/ec2-user/"$Projectname"/WEB-INF
